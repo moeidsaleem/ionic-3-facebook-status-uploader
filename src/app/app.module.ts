@@ -6,6 +6,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { AndroidPermissions } from '@ionic-native/android-permissions';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+import { Facebook } from '@ionic-native/facebook';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +28,10 @@ import { HomePage } from '../pages/home/home';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AndroidPermissions,
+    Camera,
+    Facebook
   ]
 })
 export class AppModule {}

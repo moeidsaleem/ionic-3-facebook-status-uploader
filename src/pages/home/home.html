@@ -1,14 +1,21 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
+  <ion-navbar color="secondary">
+    <ion-title text-center>
+      Photo Crop
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <button ion-button (click)="takePhoto('camera')" *ngIf="!base64Image">CAMERA</button>
+  <button ion-button (click)="takePhoto('library')" *ngIf="!base64Image">LIBRARY</button>
+
+  <img [src]="base64Image" alt="Base64 Photo" *ngIf="base64Image">
+  <ion-item *ngIf="base64Image">
+    <ion-input type="text" placeholder="Caption.." ></ion-input>
+  </ion-item>
+  <button ion-button block color="secondary" *ngIf="base64Image">Upload to Facebook</button>
+
+  
 </ion-content>
