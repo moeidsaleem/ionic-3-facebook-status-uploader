@@ -11,6 +11,8 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Facebook } from '@ionic-native/facebook';
 
 
+import { SocialSharing } from '@ionic-native/social-sharing';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -31,7 +33,8 @@ import { Facebook } from '@ionic-native/facebook';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AndroidPermissions,
     Camera,
-    Facebook
+    Facebook,
+    SocialSharing
   ]
 })
 export class AppModule {}
